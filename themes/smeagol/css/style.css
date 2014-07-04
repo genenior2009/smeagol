@@ -11,7 +11,7 @@
     clear:both;
 }
 body{
-    background:#383933 url(images/bg.jpg) no-repeat center 0;
+    background:#383933 url(/bg.jpg) no-repeat center 0;
     font-family:Arial, sans-serif;
     color:#b8b8b8;
     font-size:11px;
@@ -28,12 +28,12 @@ a:hover{
 a img{
     border:0;
 }
-.shell{width:950px; margin:0 auto; background:url(images/shell-bg.png) repeat-y; padding-bottom:60px}
+.shell{width:950px; margin:0 auto; background:url(/shell-bg.png) repeat-y; padding-bottom:60px}
 
 .left{float: left; display: inline;}
 .right{float: right; display: inline;}
 
-#header{height:107px; background:url(images/header-bg.gif) repeat-x 0 bottom; margin-left:10px; width:940px}
+#header{height:107px; background:url(/header-bg.gif) repeat-x 0 bottom; margin-left:10px; width:940px}
 
 h1#logo{
 	background-image: none;
@@ -50,7 +50,7 @@ h1#logo a{
 	display: block;
 	text-indent: -4000px;
 	height:39px;
-	background:url(images/logo.gif);
+	background:url(/logo.gif);
 }
 
 h2{font-size: 16px; color:#000; line-height: 33px; border-bottom:solid 1px #000; background:#eed025; padding-left:15px}
@@ -64,7 +64,7 @@ h2{font-size: 16px; color:#000; line-height: 33px; border-bottom:solid 1px #000;
 #content{padding-top:31px; width:913px; margin-left:12px}
 
 #sidebar{width:284px; float: left; display: inline;}
-#sidebar h2{background-image:url(images/h2-small.gif); background-repeat: no-repeat; background-position: right 0;}
+#sidebar h2{background-image:url(/h2-small.gif); background-repeat: no-repeat; background-position: right 0;}
 #sidebar .box{width:284px; margin-bottom:14px}
 #sidebar .box ul{list-style-type: none;padding-left:7px; padding-top:14px}
 #sidebar .box li{padding-bottom:7px}
@@ -78,7 +78,7 @@ h2{font-size: 16px; color:#000; line-height: 33px; border-bottom:solid 1px #000;
 #sidebar .box li .info{float: left; display: inline; width:195px}
 
 .search .field{
-	background:#292929 url(images/search.gif) no-repeat 6px 5px; 
+	background:#292929 url(/search.gif) no-repeat 6px 5px; 
 	border:0; 
 	font-size: 14px; 
 	line-height: 17px; 
@@ -107,11 +107,11 @@ h2{font-size: 16px; color:#000; line-height: 33px; border-bottom:solid 1px #000;
 .search .btnp{float: left; display: inline; height:33px}
 
 .links{padding-top:15px}
-.links a{ background:url(images/links.gif) repeat-x; line-height: 33px; width:134px; font-size: 13px; color:#fff; text-align: center; text-decoration: none;}
+.links a{ background:url(/links.gif) repeat-x; line-height: 33px; width:134px; font-size: 13px; color:#fff; text-align: center; text-decoration: none;}
 
 
 
-.box{background:url(images/dot.png); padding-bottom:7px}
+.box{background:url(/dot.png); padding-bottom:7px}
 .box a.up{text-transform: uppercase; float: right; margin-right:12px}
 .box ul{list-style-type: none;}
 .box li h4 a{ color:#fff; text-decoration: none;}
@@ -123,13 +123,13 @@ h2{font-size: 16px; color:#000; line-height: 33px; border-bottom:solid 1px #000;
 #main{float: right; display: inline; width:603px}
 #main ul.navigate{float: right; display: inline; list-style-position: outside; list-style-type: none; padding-left:20px; padding-top:2px; width:33px}
 #main ul.navigate li{width:27px; float: left; padding-left:6px; height:27px; padding-bottom:5px}
-#main ul.navigate li.active{background:url(images/yellow-arr.gif) no-repeat 0 8px;}
+#main ul.navigate li.active{background:url(/yellow-arr.gif) no-repeat 0 8px;}
 #main ul.navigate li.active a{background:#f9de32}
 #main ul.navigate li.active a:hover{text-decoration: none;}
 #main ul.navigate li a{width:27px; font-size: 14px; color:#000; text-align: center; line-height:27px; background:#fff; float: left;  text-decoration: none;}
 #main ul.navigate li a:hover{text-decoration: underline;}
 #main .box{width:603px; margin-bottom:18px; padding-bottom:18px}
-#main .box h2{width:588px; background:#eed025 url(images/h2-long.gif) no-repeat right 0; margin-bottom:15px}
+#main .box h2{width:588px; background:#eed025 url(/h2-long.gif) no-repeat right 0; margin-bottom:15px}
 #main .box ul.line{width:603px; padding-left:0}
 #main .box ul.line li{float: left; display: inline;padding-left:13px; padding-bottom:0}
 #main .box ul.line li a{ font-weight: bold; float: none;}
@@ -143,7 +143,7 @@ h2{font-size: 16px; color:#000; line-height: 33px; border-bottom:solid 1px #000;
 #main .box li .info p{padding-bottom:12px}
 
 .transparent-frame{width:550px; height:286px; position:relative; z-index: 1; float: right; display: inline; margin-bottom:12px}
-.transparent-frame .frame{background:url(images/transparent-frame.png) no-repeat; width:550px; height:286px;position:absolute; top:0; left:0; z-index: 10;}
+.transparent-frame .frame{background:url(/transparent-frame.png) no-repeat; width:550px; height:286px;position:absolute; top:0; left:0; z-index: 10;}
 
-#footer{height:47px; font-size: 11px; color:#b8b8b8; text-align: right; line-height: 47px; text-transform: uppercase; background:url(images/dot.png); width:890px; margin-left:12px; padding-right:20px}
+#footer{height:47px; font-size: 11px; color:#b8b8b8; text-align: right; line-height: 47px; text-transform: uppercase; background:url(/dot.png); width:890px; margin-left:12px; padding-right:20px}
 #footer a{ color:#b8b8b8; }
