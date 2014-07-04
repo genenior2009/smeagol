@@ -101,6 +101,7 @@ return array(
             'paths' => array(
                 __DIR__ . '/../public',
                 __DIR__ . '/../../../themes/enterprise/css/images',
+                __DIR__ . '/../../../themes/smeagol/css/images',
             ),
             // este mapeo puede ser dinamico desde base de datos o recorriendo el directorio
             'map' => array(
