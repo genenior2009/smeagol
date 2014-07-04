@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es-ES" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+	<?php echo $this->headTitle("Smeagol CMS");?>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+	<?php echo $this->headLink()->prependStylesheet($this->basePath() . '/themes/enterprise/css/style.css'); ?>
+	<!--[if IE 6]>
+		<?php echo $this->headLink()->prependStylesheet($this->basePath() . '/themes/enterprise/css/ie6.css'); ?>
+	<![endif]-->
+	<?php echo $this->headScript()->prependFile($this->basePath() . '/themes/enterprise/js/jquery-1.4.2.js');?>
+	<script src="/themes/enterprise/js/jquery.jcarousel.js" type="text/javascript"></script>
+	<script src="/themes/enterprise/js/jquery.pngFix.js" type="text/javascript"></script>
+	<script src="/themes/enterprise/js/js-fnc.js" type="text/javascript"></script>
+</head>
+<body>
+	
+<!-- Shell -->
+<div class="shell">
+	
+	<!-- Header -->
+	<div id="header">
+		
+		<h1 id="logo"><a href="#" title="free website css template">COMPANY NAME HERE<span>FREE WEBSITE TEMPLATE</span></a></h1>
+
+		<div id="navigation">
+			<ul>
+			    <li><a href="#" class="active" title="Home"><span>Home</span></a></li>
+			    <li><a href="#" title="About Us"><span>About Us</span></a></li>
+			    <li><a href="#" title="Services"><span>Services</span></a></li>
+			    <li><a href="#" title="Solutions"><span>Solutions</span></a></li>
+			    <li><a href="#" title="Support"><span>Support</span></a></li>
+			    <li><a href="#" title="Partners"><span>Partners</span></a></li>
+			    <li><a href="#" title="Contact"><span>Contact</span></a></li>
+			</ul>
+		</div>
+	</div>
+<!-- End Header -->
+<?php echo $this->content; ?>	
+</div>
+<!-- End Shell -->
+<!-- Footer -->
+<div id="footer">
+	<div class="shell">
+		<p class="left">
+			
+			<a href="#" title="Home" >Home</a>
+			<span>|</span>
+			<a href="#" title="About Us">About Us</a>
+			<span>|</span>
+			<a href="#" title="Services">Services</a>
+			<span>|</span>
+			<a href="#" title="Solutions">Solutions</a>
+			<span>|</span>
+			<a href="#" title="Support">Support</a>
+			<span>|</span>
+			<a href="#" title="Partners">Partners</a>
+			<span>|</span>
+			<a href="#" title="Contact">Contact</a>
+			
+				
+		</p>
+		
+		<p class="right">
+			&copy; Sitename.com. Design by <a href="http://css-free-templates.com/" title="Free Website Templates">CSS-Free-Templates</a>
+		</p>
+		
+		<div class="cl">&nbsp;</div>
+	</div>
+</div>	
+<!-- End Footer -->
+
+</body>
+</html>
