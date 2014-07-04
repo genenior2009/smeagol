@@ -24,7 +24,7 @@ class Module {
         $eventManager->attach('route', function($e) {
 
             // decide which theme to use by get parameter
-            $layout = 'enterprise/layout';      //Podría obtenerse de base de datos, por ahora simplificamos
+            $layout = 'smeagol/layout';      //Podría obtenerse de base de datos, por ahora simplificamos
             $e->getViewModel()->setTemplate($layout);
         });
     }
