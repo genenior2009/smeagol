@@ -111,6 +111,9 @@ return array(
                 'themes/enterprise/js/jquery.jcarousel.js' => __DIR__ . '/../../../themes/enterprise/js/jquery.jcarousel.js',
                 'themes/enterprise/js/jquery.pngFix.js' => __DIR__ . '/../../../themes/enterprise/js/jquery.pngFix.js',
                 'themes/enterprise/js/js-fnc.js' => __DIR__ . '/../../../themes/enterprise/js/js-fnc.js',
+                //smeagol
+                'themes/smeagol/js/jquery-1.3.2.min.js' => __DIR__ . '/../../../themes/smeagol/js/jquery-1.3.2.min.js',
+                'themes/smeagol/js/jquery-func.js' => __DIR__ . '/../../../themes/smeagol/js/jquery-func.js',
             ),
         ),
         'caching' => array(
