@@ -35,18 +35,132 @@ textarea { overflow:hidden; }
 h1#logo a { font-size: 22px; color:#374f5f; line-height: 22px; text-transform: uppercase; letter-spacing: 0.4px; text-decoration: none; width: 304px; float: left; padding: 26px 0 0 2px; }
 h1#logo a span { color: #685d5d; font-size: 10px; letter-spacing: 0px; display: block; position: relative; top: -6px; margin-left: 123px; }
 
+/*
 #navigation { float: right; display: inline; margin-top: 25px; }
 #navigation ul { list-style: none outside none; }
 #navigation ul li { float: left; display: inline; padding-right: 15px; }
 #navigation ul li a,
-#navigation ul li a span { float: left; display: inline; height: 37px; font-family: Verdana, sans-serif; font-weight: bold; color: #3d708b; padding-left: 15px; line-height: 35px; }
-#navigation ul li a span { position: relative; padding: 0 15px 0 0; margin-right: -10px; }
+#navigation ul li a  { float: left; display: inline; height: 37px; font-family: Verdana, sans-serif; font-weight: bold; color: #3d708b; padding-left: 15px; line-height: 35px; }
+#navigation ul li a  { position: relative; padding: 0 15px 0 0; margin-right: -10px; }
 #navigation ul li a:hover,
 #navigation ul li a.active,
-#navigation ul li a:hover span,
-#navigation ul li a.active span { background: url(/nav-hover.gif) no-repeat 0 0; }
-#navigation ul li a:hover span,
-#navigation ul li a.active span { background-position: right 0; }
+#navigation ul li a:hover,
+#navigation ul li a.active{ background: url(/nav-hover.gif) no-repeat 0 0; }
+#navigation ul li a:hover,
+#navigation ul li a.active{ background-position: right 0; }
+#navigation ul li ul { display: none; }
+*/
+/* el menú en si mismo */
+#navigation,#login { float:right;}
+.navigation  {
+    border-radius: 5px;
+    list-style-type: none;
+    margin: 0 auto; /* si queremos centrarlo */
+    padding: 0;
+    /* la altura y su ancho dependerán de los textos */
+    height: 40px; 
+    width: 550px;
+    /* el color de fondo */
+    background: #555;
+    background: -moz-linear-gradient(#555,#222);
+    background: -webkit-linear-gradient(#555,#222);
+    background: -o-linear-gradient(#555,#222);
+    background: -ms-linear-gradient(#555,#222);
+    background: linear-gradient(#555,#222);
+}
+
+/* si es necesario, evitamos que Blogger de problemas con los saltos de línea cuando escribimos el HTML */
+.navigation  br { display:none; }
+
+/* cada item del menu */
+.navigation  li {
+    display: block;
+    float: left; /* la lista se ve horizontal */
+    height: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.navigation li a {
+    border-left: 1px solid #000;
+    border-right: 1px solid #666;
+    color: #EEE;
+    display: block;
+    font-family: Tahoma;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 28px;
+    padding: 0 14px;
+    margin: 6px 0;
+    text-decoration: none;
+    /* animamos el cambio de color de los textos */
+    -webkit-transition: color .2s ease-in-out;
+    -moz-transition: color .2s ease-in-out;
+    -o-transition: color .2s ease-in-out;
+    -ms-transition: color .2s ease-in-out;
+    transition: color .2s ease-in-out;
+}
+/* eliminamos los bordes del primer y el último */
+.navigation li:first-child a { border-left: none; }
+.navigation li:last-child a{ border-right: none; }
+/* efecto hover cambia el color */
+.navigation li:hover > a { color: Crimson; }
+
+/* los submenús */
+.navigation ul {
+    border-radius: 0 0 5px 5px;
+    left: 0;
+    margin: 0;
+    opacity: 0; /* no son visibles */
+    position: absolute;
+    top: 40px; /* se ubican debajo del enlace principal */
+    /* el color de fondo */
+    background: #222;
+    background: -moz-linear-gradient(#222,#555);
+    background: -webkit-linear-gradient(#22,#555);
+    background: -o-linear-gradient(#222,#555);
+    background: -ms-linear-gradient(#222,#555);
+    background: linear-gradient(#222,#555);
+    /* animamos su visibildiad */
+    -moz-transition: opacity .25s ease .1s;
+    -webkit-transition: opacity .25s ease .1s;
+    -o-transition: opacity .25s ease .1s;
+    -ms-transition: opacity .25s ease .1s;
+    transition: opacity .25s ease .1s;
+}
+/* son visibes al poner el cursor encima */
+.navigation li:hover > ul { opacity: 1; z-index:6;}
+
+/* cada un ode los items de los submenús */
+.navigation ul li {
+    height: 0; /* no son visibles */
+    overflow: hidden;
+    padding: 0;
+    /* animamos su visibildiad */
+    -moz-transition: height .25s ease .1s;
+    -webkit-transition: height .25s ease .1s;
+    -o-transition: height .25s ease .1s;
+    -ms-transition: height .25s ease .1s;
+    transition: height .25s ease .1s;
+}
+.navigation li:hover > ul li {
+    height: 36px; /* los mostramos */
+    overflow: visible;
+    padding: 0;
+    z-index:6;
+}
+.navigation ul li a {
+    border: none;
+    border-bottom: 1px solid #111;
+    margin: 0;
+    /* el ancho dependerá de los textos a utilizar */
+    padding: 5px 20px;
+    width: 165px;
+}
+/* el último n otiene un borde */
+.navigation ul li:last-child a { border: none; }
+.navigation ul li ul  { display: none; }
 
 /* End Header */
 
