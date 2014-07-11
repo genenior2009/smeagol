@@ -20,6 +20,26 @@ return array(
                     ),
                 ),
             ),
+            'auth' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => '/auth',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Auth',
+                        'action' => 'index',
+                    ),
+                ),
+            ),
+            'logout' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => '/logout',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Auth',
+                        'action' => 'logout',
+                    ),
+                ),
+            ),
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
@@ -73,7 +93,8 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Auth' => 'Application\Controller\AuthController',
         ),
     ),
     'view_manager' => array(
@@ -88,19 +109,18 @@ return array(
             'error/404' => __DIR__ . '/../view/error/404.phtml',
             'error/index' => __DIR__ . '/../view/error/index.phtml',
         ),
-        /* 'template_path_stack' => array(
-          __DIR__ . '/../view',
-          ), */
         'template_path_stack' => array(
-            __DIR__ . '/../../../themes', // <------------------  Modificar aca
+            __DIR__ . '/../../../themes',
+            'application' => __DIR__ . '/../view',
         ),
     ),
+    // agregar este bloque
     // agregar este bloque al final
     'asset_manager' => array(
         'resolver_configs' => array(
             'paths' => array(
-                __DIR__ . '/../public',
-                __DIR__ . '/../../../themes/smeagol/css/images',
+                __DIR__ . '/../public', // public del module Application
+                __DIR__ . '/../../../themes/enterprise/css/images',
             ),
             // este mapeo puede ser dinamico desde base de datos o recorriendo el directorio
             'map' => array(
@@ -110,10 +130,6 @@ return array(
                 'themes/enterprise/js/jquery.jcarousel.js' => __DIR__ . '/../../../themes/enterprise/js/jquery.jcarousel.js',
                 'themes/enterprise/js/jquery.pngFix.js' => __DIR__ . '/../../../themes/enterprise/js/jquery.pngFix.js',
                 'themes/enterprise/js/js-fnc.js' => __DIR__ . '/../../../themes/enterprise/js/js-fnc.js',
-                //smeagol
-                'themes/smeagol/css/style.css' => __DIR__ . '/../../../themes/smeagol/css/style.css',
-                'themes/smeagol/js/jquery-1.3.2.min.js' => __DIR__ . '/../../../themes/smeagol/js/jquery-1.3.2.min.js',
-                'themes/smeagol/js/jquery-func.js' => __DIR__ . '/../../../themes/smeagol/js/jquery-func.js',
             ),
         ),
         'caching' => array(

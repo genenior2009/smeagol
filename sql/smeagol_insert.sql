@@ -1,4 +1,4 @@
-use smeagol
+use smeagol;
 -- Table role
 INSERT INTO role (type,description) VALUE("admin","Admin User"); 
 INSERT INTO role (type,description) VALUE("editor","User with rol of editor"); 
