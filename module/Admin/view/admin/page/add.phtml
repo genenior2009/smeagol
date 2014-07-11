@@ -1,0 +1,20 @@
+<h1>Crear Página</h1>
+<br>
+<form action="" method=post>
+	<table>
+		<tr>
+			<th>Título</th><td><input type="text" name="titulo" size="100" value="<?php echo $page->title;?>"/></td>			
+		</tr>
+		<tr>
+			<th>Contenido</th><td><textarea name="contenido" rows="50" cols="120" class="ckeditor"><?php echo $page->content;?></textarea></td>
+		</tr>
+		<tr>
+			<th>URL</th><td><input type="text" name="url" size="100" value="<?php echo $page->url;?>"/></td>			
+		</tr>	
+		<tr>
+			<td colspan="2"><div style="float:right;"><input type="submit" value="Guardar"/></div></td>			
+		</tr>		
+	</table>
+	<br>
+	<h1><?php echo $mensaje; ?></h1>
+</form>

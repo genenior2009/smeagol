@@ -60,5 +60,10 @@ class Page extends NodeTable
 			}
 		}
 	}
+        
+        public function deletePage($id)
+	{
+		$this->tableGateway->delete(array('id' => $id));
+	}
 	
 }

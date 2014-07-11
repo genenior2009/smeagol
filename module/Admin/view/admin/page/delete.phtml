@@ -1,0 +1,17 @@
+<?php
+$title = 'Borrar Página';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1><br/>
+
+<p>¿ Ud. esta seguro de borrar la página?</p>
+<form action="" method="post">
+<div>
+    <input type="hidden" name="id" value="<?php echo (int) $page->id; ?>" />
+    <input type="submit" name="del" value="SI" />
+    <input type="submit" name="del" value="NO" />
+</div>
+</form>
+<br /> 
+<h3><?php echo $this->escapeHtml($page->title); ?></h3><br />
+<?php echo $page->content; ?>
