@@ -37,7 +37,7 @@ class PageController extends AbstractActionController {
      * @return type
      * @throws \Page\Controller\Exception
      */
-    public function dispatch(\Zend\Stdlib\RequestInterface $request, \Zend\Stdlib\ResponseInterface $response = null) {
+    /*public function dispatch(\Zend\Stdlib\RequestInterface $request, \Zend\Stdlib\ResponseInterface $response = null) {
         $identifier = (string) $this->getEvent()->getRouteMatch()->getParam('action');
         $identifier = "page/" . $identifier;
         $page = $this->getPage();
@@ -65,7 +65,7 @@ class PageController extends AbstractActionController {
                 return;
             }
         }
-    }
+    }*/
 
     public function indexAction() {
         return new ViewModel(array(
