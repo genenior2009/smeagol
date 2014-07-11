@@ -233,3 +233,9 @@ h1#logo a span { color: #685d5d; font-size: 10px; letter-spacing: 0px; display: 
 #footer p.right a:hover { color: #000; }
 
 /* End Footer */
+
+/* forms */
+input{
+    border: 1px solid #b6b6b6;
+    padding: 5px;
+}
