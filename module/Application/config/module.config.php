@@ -40,6 +40,16 @@ return array(
                     ),
                 ),
             ),
+            'login' => array(
+                    'type' => 'Zend\Mvc\Router\Http\Literal',
+                    'options' => array(
+                            'route'    => '/login',
+                            'defaults' => array(
+                                    'controller' => 'Application\Controller\Auth',
+                                    'action'     => 'login',
+                            ),
+                    ),  
+            ), 
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
@@ -130,6 +140,7 @@ return array(
                 'themes/enterprise/js/jquery.jcarousel.js' => __DIR__ . '/../../../themes/enterprise/js/jquery.jcarousel.js',
                 'themes/enterprise/js/jquery.pngFix.js' => __DIR__ . '/../../../themes/enterprise/js/jquery.pngFix.js',
                 'themes/enterprise/js/js-fnc.js' => __DIR__ . '/../../../themes/enterprise/js/js-fnc.js',
+                'js/login.js' => __DIR__ . '/../public/login.js',
             ),
         ),
         'caching' => array(
