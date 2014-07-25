@@ -97,3 +97,10 @@ function get_menu_tree($parent_id = '0', $path="", $exclude = '', $menu_tree_arr
 
     return $menu_tree_array;
 }  
+
+// Obteniendo los primary_menus  
+$menus= get_menu_tree(1, '', '0', '', false);
+
+// Obetiendo el menú de administración
+$menus= get_menu_tree(2, '', '0', '', false);
+print_r($menus);
