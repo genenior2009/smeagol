@@ -14,10 +14,14 @@ use Zend\Mvc\MvcEvent;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 // Add these import statements:
+// Add these import statements:
 use Smeagol\Model\Node;
 use Smeagol\Model\NodeTable;
 use Smeagol\Model\User;
 use Smeagol\Model\UserTable;
+use Smeagol\Model\Menu;
+use Smeagol\Model\MenuTable;
+
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Authentication\AuthenticationService;
@@ -98,6 +102,18 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface {
             $tableGateway = $sm->get('UserTableGateway');
             $table = new UserTable($tableGateway);
             return $table;
+        },
+          //       Agregar en el Método getServiceConfig()
+             'Smeagol\Model\MenuTable' => function($sm) {
+            $tableGateway = $sm->get('MenuTableGateway');
+            $table = new MenuTable($tableGateway);
+            return $table;
+        },
+                'MenuTableGateway' => function ($sm) {
+            $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+            $resultSetPrototype = new ResultSet();
+            $resultSetPrototype->setArrayObjectPrototype(new Menu());
+            return new TableGateway('menu', $dbAdapter, null, $resultSetPrototype);
         },
                 'UserTableGateway' => function ($sm) {
             $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
