@@ -24,35 +24,39 @@ use Zend\Authentication\AuthenticationService;
 
 class Module implements AutoloaderProviderInterface, ConfigProviderInterface {
 
-    public function onBootstrap(MvcEvent $e)
-    {
+    public function onBootstrap(MvcEvent $e) {
         $e->getApplication()->getServiceManager()->get('translator');
-        $eventManager        = $e->getApplication()->getEventManager();
+        $eventManager = $e->getApplication()->getEventManager();
+        $app = $e->getApplication();
+        $sm = $app->getServiceManager();
+        $nav = $sm->get('Navigation');
+
+        $alias = $sm->get('Application\Router\Alias');
+        $alias->setNavigation($nav);
+
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
-       
-        
         $eventManager->attach('route', function($e) {
-        	$auth = new AuthenticationService();
-        	$is_login=false;
-        	if (!$auth->hasIdentity()) {
-        		$is_login=true;
-        	}
+            // verificando si el usuario esta logueado
+            $auth = new AuthenticationService();
+            $is_login = false;
+            if ($auth->hasIdentity()) {
+                $is_login = true;
+            }
 
-        	// validamos si entramos en el index del portal
-			$is_front=false;
-			
+            // validamos si entramos en el index del portal
+            $is_front = false;
             // obtenemos la ruta del request
-		    $ruta = $e->getRouter()->getRequestUri()->getPath();
-				
-        	if($ruta=="/" || $ruta=="/application" || $ruta==="/application/index" || $ruta==="/application/index/index"){
-        		$is_front=true;
-        	}
-        	// decide which theme to use by get parameter
+            $ruta = $e->getRouter()->getRequestUri()->getPath();
+
+            if ($ruta == "/" || $ruta == "/application" || $ruta === "/application/index" || $ruta === "/application/index/index") {
+                $is_front = true;
+            }
+            // decide which theme to use by get parameter
             $layout = 'enterprise/layout';
             $e->getViewModel()->setTemplate($layout);
-            $e->getViewModel()->setVariable("is_login",$is_login);
-            $e->getViewModel()->setVariable("is_front",$is_front);
+            $e->getViewModel()->setVariable("is_login", $is_login);
+            $e->getViewModel()->setVariable("is_front", $is_front);
         });
     }
 
@@ -75,6 +79,10 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface {
     public function getServiceConfig() {
         return array(
             'factories' => array(
+                'Application\Router\Alias' => function($sm) {
+            $alias = new \Application\Router\Alias('/node[/:id]');
+            return $alias;
+        },
                 'Smeagol\Model\NodeTable' => function($sm) {
             $tableGateway = $sm->get('NodeTableGateway');
             $table = new NodeTable($tableGateway);

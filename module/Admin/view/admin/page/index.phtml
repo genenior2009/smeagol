@@ -7,7 +7,7 @@
     <table class="tcontent"><tr><th>Título</th><th>Autor<th>Modificado</th><th>&nbsp;</th><th>&nbsp;</th><tr>
                 <?php foreach ($pages as $page) : ?>
             <tr>
-                <td><a href="<?php echo $this->escapeHtml($page->url); ?>"><?php echo $this->escapeHtml($page->title); ?></a></td>
+                <td><a href="<?php echo "/".$this->escapeHtml($page->url); ?>"><?php echo $this->escapeHtml($page->title); ?></a></td>
                 <td><?php echo $this->escapeHtml($page->user_id); ?></td>
                 <td><?php echo $this->escapeHtml($page->created); ?></td>
                 <td><a href="<?php echo $this->url('admin', array('controller' => 'page', 'action' => 'edit', 'id' => $page->id)); ?>">Editar</a></td>

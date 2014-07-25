@@ -24,6 +24,19 @@ class IndexController extends AbstractActionController {
         ));
     }
 
+    public function nodeAction() {
+        $id = (int) $this->params()->fromRoute('id', 0);
+        if (!$id) {
+            return $this->redirect()->toRoute('home');
+        }
+
+        $node = $this->getNodeTable()->getNode($id);
+
+        return new ViewModel(array(
+            'node' => $node
+        ));
+    }
+
     // Agregamos este método
     public function getNodeTable() {
         if (!$this->nodeTable) {

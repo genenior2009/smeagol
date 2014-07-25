@@ -1,0 +1,245 @@
+/* == 10. Horizontal menu Background == */
+
+/*====================
+        Color Scheme Begin
+=====================================================================
+====================================================================*/
+
+/* Menu bar background color */
+#navigation-admin, 
+#nav li ul li, 
+#nav li ul li a{
+    background: #000; 
+}
+
+/* Menu Item text color */
+#nav li a, 
+#nav li a:hover, 
+#nav li ul li,
+#nav li ul li a,
+#nav li ul li a:hover  {
+    color: #fff; 
+}
+
+/* Menu Item background color on hover */
+#nav li a:hover, 
+#nav li ul li a:hover  {
+    background: #5F9EA0; 
+}
+
+/* Text Shadow */
+#nav li a, 
+#nav li a:hover, 
+#nav li ul li a:hover  {
+    text-shadow: 0 1px 1px #333; 
+}
+
+/* Search form colors */
+.searchform input, .searchform input:not(:focus){
+    color:#B1B1B1; /*search form text color default*/
+    background: #fff; /*search form background color default*/
+}
+.searchfield:focus{
+    color: #6FA7A9; /* search form text color after click */
+}
+
+/*=====================================================================
+=======================================================================
+        Color Scheme End
+====================*/
+
+#menu_div{
+    clear: both;
+    position: relative;
+    top: 0;
+    left: 0;
+} /* Free space to top specialy for menu */
+
+#navigation-admin {
+    position: fixed;
+}
+
+#navigation-admin, #menu_div {
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#menu_div, #navigation-admin, #menu, #nav{
+    height: 45px; /* menu height */
+    left:0px;
+    margin:0px;
+}
+
+#menu_div:hover,
+#navigation-admin:hover,
+#nav li a:hover, #nav li ul a 
+{
+    opacity: 0.95;/* Menu transparency on mouse hover*/
+} 
+
+#menu_div,
+#navigation-admin, 
+#nav li a, 
+#menu_div:not(:hover), 
+#navigation-admin:not(:hover)
+{
+    opacity: 0.8;/* Menu transparency on mouse out */
+}
+er
+
+#menu {
+    width: 960px;
+    margin:0; /*center the menu*/
+    padding:0;
+    position: relative;
+}
+
+#nav{
+    width: 960px;
+    margin:0;
+    padding:0;
+    position: relative;
+    font-family: 'Arial', Helvetica, sans-serif;
+}
+
+#nav li a,#nav li {
+    float:left;
+}
+
+#nav li {
+    list-style:none;
+    position:relative;
+}
+
+#nav li a {
+    line-height: 30px;
+    padding:0 15px;
+    text-decoration:none;
+    margin:0;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+}
+
+/*====================
+        Submenu 
+=====================*/
+#nav li ul {
+    display:none;
+    position:absolute;
+    left:0;
+    top:100%;
+    padding:0;
+    margin:0;
+} /* hide submenu */
+
+#nav li:hover > ul {
+    display:block;
+} /* show submenu on hover */
+
+#nav li ul li,#nav li ul li a {
+    float:none;
+    height: 35px; /* submenu item height */
+    min-width: 150px; /* submenu item minimal width */
+    line-height: 35px;
+    border-right: 0;
+    text-shadow: none;
+    display:block;
+    font-size:13px;
+    font-weight:400;
+    text-transform:inherit;
+} /* Submenu item */
+
+#nav li ul li {
+    _display:inline; /* for IE */
+}
+
+/* == 12. Sub-Sub Menu == */
+#nav li ul li ul {
+    display:none;
+}
+
+#nav li ul li:hover ul {
+    left:100%;
+    top:0;
+}
+
+/*====================
+        Search form 
+====================*/
+
+.searchform {
+    position: absolute;
+    right: 15px;
+    top: 6px;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    border: 0;
+    padding: 0;
+}
+.searchform input {
+    font: normal 12px/100% Arial, Helvetica, sans-serif;
+}
+.searchform .searchfield {
+    height: 27px;
+    line-height: 27px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 150px;
+    border: 2px solid #333;
+    outline: none;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+    -moz-box-shadow: inset 1px 1px 2px #A1A1A1;
+    -webkit-box-shadow: inset 1px 1px 2px #A1A1A1;
+    box-shadow: inner 1px 1px 2px #A1A1A1;
+}
+
+.searchfield:focus{
+    font-weight: 700;
+    width: 220px;
+}
+
+.searchfield:not(:focus){
+    width: 150px;
+}
+
+
+/*========================
+                Transitions
+========================*/
+
+#nav li a:hover,
+#nav li ul li a:hover  {
+    -webkit-transition-property:color, background; 
+    -webkit-transition-duration: 0.5s, 0.5s; 
+    -webkit-transition-timing-function: linear, ease-out;
+}
+
+.searchfield:focus,
+.searchfield:not(:focus){
+    -webkit-transition-property:width; 
+    -webkit-transition-duration: 0.5s, 0.5s; 
+    -webkit-transition-timing-function: linear, ease-out;
+}
+
+#menu_div:hover,
+#navigation-admin:hover,
+#nav li ul a, 
+#menu_div,
+#navigation-admin, 
+#nav li a, 
+#menu_div:not(:hover), 
+#navigation-admin:not(:hover)
+{
+    -webkit-transition-property:opacity; 
+    -webkit-transition-duration: 0.5s, 0.5s; /* duration in seconds */
+    -webkit-transition-timing-function: linear, ease-out;
+} /* Menu transparency animation */
+
+#navigation-admin .navigation{
+    margin: 0px;
+}

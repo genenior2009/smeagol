@@ -1,3 +1,13 @@
+<?php
+$this->HeadScript()->appendScript("
+		$().ready(function() {
+			CKEDITOR.replace( 'contenido', {
+    			filebrowserBrowseUrl : '/admin/index/elfinder', // eg. 'includes/elFinder/elfinder.html'
+  			});
+		});"
+);
+/*  */
+?>
 <h1>Crear Página</h1>
 <br>
 <form action="" method=post>
@@ -6,7 +16,7 @@
 			<th>Título</th><td><input type="text" name="titulo" size="100" value="<?php echo $page->title;?>"/></td>			
 		</tr>
 		<tr>
-			<th>Contenido</th><td><textarea name="contenido" rows="50" cols="120" class="ckeditor"><?php echo $page->content;?></textarea></td>
+			<th>Contenido</th><td><textarea id="contenido" name="contenido" rows="50" cols="120" class="ckeditor"><?php echo $page->content;?></textarea></td>
 		</tr>
 		<tr>
 			<th>URL</th><td><input type="text" name="url" size="100" value="<?php echo $page->url;?>"/></td>			

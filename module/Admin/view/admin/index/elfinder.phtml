@@ -1,0 +1,20 @@
+<?php
+$this->HeadLink()->appendStylesheet ( "/jquery-ui-1.8.18.min.css" );
+$this->HeadScript()->appendFile ( "/jquery-1.7.2.min.js" );
+$this->HeadScript()->appendFile ( "/jquery-ui-1.8.18.min.js" );
+$this->HeadLink()->appendStylesheet ( "/elfinder/css/elfinder.min.css" );
+$this->HeadLink()->appendStylesheet ( "/elfinder/css/theme.css" );
+$this->HeadScript()->appendFile ( "/elfinder/js/elfinder.min.js" );
+$this->HeadScript()->appendFile ( "/elfinder/js/i18n/elfinder.es.js" );
+$this->HeadScript()->appendScript("
+<!-- elFinder initialization (REQUIRED) -->
+$().ready(function() {
+	var elf = $('#elfinder').elfinder({
+	url : '/admin/index/elfinderfile',  // connector URL (REQUIRED)
+	lang: 'es',             // language (OPTIONAL)
+	}).elfinder('instance');
+});"
+);
+?>
+<!-- Element where elFinder will be created (REQUIRED) -->
+<div id="elfinder"></div>

@@ -103,7 +103,6 @@ class AuthController extends AbstractActionController {
         // Obtenemos el ViewHelper HeadScript para agregar un javacript en la sección head
         // del html; este script controlará la petición en Ajax
         $HeadScript = $this->getServiceLocator()->get('viewhelpermanager')->get('HeadScript');
-
         $HeadScript->appendFile("/jquery.validate.min.js");
         $HeadScript->appendFile("/js/login.js");
     }
@@ -126,40 +125,40 @@ class AuthController extends AbstractActionController {
 
             if (empty($username) || empty($password)) {
                 $data["mensaje"] = "llene todos los datos";
-            }
-            // Creando la instancia del objeto authAdapter
-            $authAdapter = new AuthAdapter($dbAdapter);
-
-            // Definiendo la tabla de usuario, la columna de username y password
-            $authAdapter->setTableName('user')
-                    ->setIdentityColumn('username')
-                    ->setCredentialColumn('password');
-
-            //Seteando los valores de usuario y password
-            $password = md5($password);
-            $authAdapter->setIdentity($username)
-                    ->setCredential($password);
-
-            //Autenticamos
-            $result = $authAdapter->authenticate();
-
-            // verificamos si autentico
-            if (!$result->isValid()) {
-                $data["mensaje"] = "Usuario o Clave incorrecta";
             } else {
-                $data["resultado"] = true;
-                $data["username"] = $username;
-                //Iniciando la sesión
-                $session = new Storage\Session();
+                // Creando la instancia del objeto authAdapter
+                $authAdapter = new AuthAdapter($dbAdapter);
 
-                //Obteniendo los datos del usuario
-                $sm = $this->getServiceLocator();
-                $userTable = $sm->get('Smeagol\Model\UserTable');
-                $user = $userTable->getUserByUsername($username);
-                unset($user->password);
-                $session->write($user);
+                // Definiendo la tabla de usuario, la columna de username y password
+                $authAdapter->setTableName('user')
+                        ->setIdentityColumn('username')
+                        ->setCredentialColumn('password');
+
+                //Seteando los valores de usuario y password
+                $password = md5($password);
+                $authAdapter->setIdentity($username)
+                        ->setCredential($password);
+
+                //Autenticamos
+                $result = $authAdapter->authenticate();
+
+                // verificamos si autentico
+                if (!$result->isValid()) {
+                    $data["mensaje"] = "Usuario o Clave incorrecta";
+                } else {
+                    $data["resultado"] = true;
+                    $data["username"] = $username;
+                    //Iniciando la sesión
+                    $session = new Storage\Session();
+
+                    //Obteniendo los datos del usuario
+                    $sm = $this->getServiceLocator();
+                    $userTable = $sm->get('Smeagol\Model\UserTable');
+                    $user = $userTable->getUserByUsername($username);
+                    unset($user->password);
+                    $session->write($user);
+                }
             }
-
             echo json_encode($data);
 
             // Deshabilitando el View
