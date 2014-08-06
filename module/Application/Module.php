@@ -66,10 +66,10 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface {
                 'member' => array(
                     'mvc:application.*',
                     'mvc:admin.index.index',
-                    'mvc:admin.pages.index',
-                    'mvc:admin.pages.add',
-                    'mvc:admin.pages.edit:owner',
-                    'mvc:admin.pages.delete:owner',
+                    'mvc:admin.page.index',
+                    'mvc:admin.page.add',
+                    'mvc:admin.page.edit:owner',
+                    'mvc:admin.page.delete:owner',
                 )
             );
 
