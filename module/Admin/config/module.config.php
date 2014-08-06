@@ -5,6 +5,7 @@ return array(
         'invokables' => array(
             'Admin\Controller\Index' => 'Admin\Controller\IndexController',
             'Admin\Controller\Page' => 'Admin\Controller\PageController',
+            'Admin\Controller\Noticias' => 'Admin\Controller\NoticiasController',
         ),
     ),
     // Sección nueva donde definimos las reglas de ruteo y el ruteado principal
