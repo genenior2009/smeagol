@@ -30,7 +30,7 @@
                         <div id="menu_div">
                             <div id="navigation-admin">   
                                 <div id="menu">
-                                    <?php echo $this->navigation("admin_menus")->menu(); ?>
+                                    <?php echo $this->navigation("admin_menus")->setAcl($this->acl)->setRole($this->role); ?>
                                 </div>
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                     </div>		
                     <br/><br/>
                     <div id="navigation">   
-                        <?php echo $this->navigation("primary_menus")->menu(); ?>
+                        <?php echo $this->navigation("primary_menus")->setAcl($this->acl)->setRole($this->role); ?>
                     </div>
                 </div>
                 <!-- End Header -->

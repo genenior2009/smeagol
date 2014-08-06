@@ -69,13 +69,16 @@ class MenuTable {
 
         foreach ($resultSet as $menu) {
             $route = "home";
+            $module = "application";
             $controller = "";
             $action = "";
+            $resource = "mvc:application.index.index";
 
             if (empty($menu['node_id'])) {
                 if ($menu['urlmenu'] != '/') {
                     $m = explode("/", $menu['urlmenu']);
                     $route = $m[0];
+                    $module = $m[0];
                     if (!empty($m[1])) {
                         $controller = $m[1];
                     } else {
@@ -86,27 +89,34 @@ class MenuTable {
                     } else {
                         $action = "index";
                     }
+                    $resource = "mvc:$module.$controller.$action";
                 }
             } else {
                 $route = "node";
+                $module = "application";
             }
 
             $page = array('id' => $menu['id'],
                 'label' => $menu['label'],
-                'route' => $route);
-
-
+                'route' => $route,
+                'module' => $module);
+            
             if (!empty($controller)) {
                 $page['controller'] = $controller;
                 if (!empty($action)) {
                     $page['action'] = $action;
                 }
             } else {
-                //Se coloco un Slash clase 7
-                $page['params'] = array('id' => $menu['id'], 'link' => "/".$menu['urlnode']);
+                if($route!="home"){
+                    $resource = "mvc:application.index.node";
+                }    
+                $page['params'] = array('id' => $menu['id'], 'link' => "/" . $menu['urlnode']);
             }
 
-
+            if (!empty($resource)) {
+                $page['resource'] = $resource;
+            }
+            
             if (empty($path)) {
                 $menuTree[] = $page;
                 end($menuTree);
@@ -115,13 +125,10 @@ class MenuTable {
                 $pt = explode(":", $path);
                 $temp = & $menuTree;
                 foreach ($pt as $p) {
-                    //print_r($temp);
                     if (!empty($p)) {
                         $temp = &$temp[$p];
                     }
                 }
-                //echo $path."\n";	
-
                 $temp["pages"]["menu" . $menu['id']] = $page;
                 end($temp["pages"]);
                 $last_key = "pages:" . key($temp["pages"]) . ":";

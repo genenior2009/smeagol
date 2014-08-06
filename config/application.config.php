@@ -4,9 +4,7 @@ return array(
     'modules' => array(
         'AssetManager',
         'Application',
-        'Admin',
-        'Page',
-        'Noticias'
+        'Admin'
     ),
 
     // These are various options for the listeners attached to the ModuleManager
