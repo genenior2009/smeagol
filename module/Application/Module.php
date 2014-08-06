@@ -33,11 +33,11 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface {
         $eventManager = $e->getApplication()->getEventManager();
         $app = $e->getApplication();
         $sm = $app->getServiceManager();
-        $nav = $sm->get('Navigation');
 
         $alias = $sm->get('Application\Router\Alias');
-        $alias->setNavigation($nav);
-
+        $nodeTable = $sm->get('Smeagol\Model\NodeTable');
+        $alias->setNodeTable($nodeTable);
+   
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
         $eventManager->attach('route', function($e) {
@@ -52,7 +52,6 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface {
             $is_front = false;
             // obtenemos la ruta del request
             $ruta = $e->getRouter()->getRequestUri()->getPath();
-
             if ($ruta == "/" || $ruta == "/application" || $ruta === "/application/index" || $ruta === "/application/index/index") {
                 $is_front = true;
             }

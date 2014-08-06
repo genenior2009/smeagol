@@ -102,7 +102,8 @@ class MenuTable {
                     $page['action'] = $action;
                 }
             } else {
-                $page['params'] = array('id' => $menu['id'], 'link' => $menu['urlnode']);
+                //Se coloco un Slash clase 7
+                $page['params'] = array('id' => $menu['id'], 'link' => "/".$menu['urlnode']);
             }
 
 
