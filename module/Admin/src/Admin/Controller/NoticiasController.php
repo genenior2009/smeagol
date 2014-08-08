@@ -8,6 +8,8 @@ use Zend\View\Model\ViewModel;
 
 class NoticiasController extends AbstractActionController {
 
+    
+    //Hay que hacerlo trabajar en conjunto
     /**
      * Page
      * @var Admin\Model\Page
