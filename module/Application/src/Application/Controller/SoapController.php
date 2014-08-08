@@ -11,8 +11,8 @@ use Smeagol\Service\Hello;
 class SoapController extends AbstractActionController {
     public function nowsdlAction() {
         $hello = new Hello();
-        $options = array('location' => 'http://www.smeagol.com/soap/nowsdl',
-            'uri' => 'http://www.smeagol.com/soap/nowsdl');
+        $options = array('location' => 'http://vm-0.genenior2009.koding.kd.io/soap/nowsdl',
+            'uri' => 'http://vm-0.genenior2009.koding.kd.io/soap/nowsdl');
 
         // Instancia del Soap Server; null establece que no se usa un descriptor wsdl
         $server = new Server(null, $options);
@@ -26,8 +26,8 @@ class SoapController extends AbstractActionController {
     }
 
     public function test1Action() {
-        $options = array('location' => 'http://www.smeagol.com/soap/nowsdl',
-            'uri' => 'http://www.smeagol.com/soap/nowsdl');
+        $options = array('location' => 'http://vm-0.genenior2009.koding.kd.io/soap/nowsdl',
+            'uri' => 'http://vm-0.genenior2009.koding.kd.io/soap/nowsdl');
         
         // Instancia de Soap Client, null establece que no se usa un descriptor wsdl
         $client = new Client(null, $options);
