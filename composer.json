@@ -10,6 +10,12 @@
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.3.*",
-        "rwoverdijk/assetmanager": "1.*"
+        "rwoverdijk/assetmanager": "1.*",
+        "symfony/expression-language": "2.*"
+    },
+    "autoload": {
+        "psr-0":{
+           "Application": "module/Application/src"
+        }
     }
 }

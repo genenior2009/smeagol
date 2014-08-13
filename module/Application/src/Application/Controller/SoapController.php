@@ -9,7 +9,7 @@ use Zend\Soap\AutoDiscover;
 use Smeagol\Service\Hello;
 
 class SoapController extends AbstractActionController {
-
+    
     public function nowsdlAction() {
         $hello = new Hello();
         $options = array('location' => 'http://vm-0.genenior2009.koding.kd.io/soap/nowsdl',
